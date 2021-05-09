@@ -2,6 +2,7 @@
 from pathlib import Path
 import os
 import environ
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -137,3 +138,5 @@ SECURE_HSTS_SECONDS = 3600
 SECURE_HSTS_INCLUDE_SUBDOMAINS = False
 
 SECURE_HSTS_PRELOAD = False
+
+django_heroku.setting.settings(locals())
