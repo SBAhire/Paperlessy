@@ -15,22 +15,9 @@
         {% endif %}
         <form action="" method="post" class=" container mt-5 bg-light p-3 ">
             {% csrf_token %}
-            <div class="d-flex justify-content-between mt-3 ">
-                <input type="text" name="first_name" class="form-control mx-3" placeholder="First Name" maxlength="30" required id="id_first_name">
-                <input type="text" name="last_name" class="form-control mx-3" placeholder="Last Name"  maxlength="30" required id="id_last_name">
-            </div>
-            <div class="d-flex justify-content-between mt-3 ">
-                <input type="text" name="username" placeholder="Username" class="form-control mx-3" maxlength="150" autofocus required id="id_username">
-                <input type="email" name="email" placeholder="Email" class="form-control mx-3" required id="id_email">
-            </div>
-            <div class="d-flex justify-content-between mt-3 ">
-                <input type="password" name="password1" placeholder="Password" class="form-control mx-3" autocomplete="new-password" required id="id_password1">
-                <input type="password" name="password2" class="form-control mx-3" placeholder="Confirm Password" autocomplete="new-password" required id="id_password2">
-            </div>
-            
-            
-            <div class="d-flex justify-content-between mt-3">
-                <a href="{% url 'login' %}" class="btn btn-primary mx-3 ">LOGIN</a>
+                {{register_form|crispy}}
+            <div class="d-flex justify-content-center mt-3">
+                <a href="{% url 'login' %}" class="btn btn-primary mx-3 ">LOGIN HERE</a>
                 <button type="submit" class="btn text-light mx-3 " style="background-color: rgb(15, 84, 105);">Register</button>
                 
             </div>

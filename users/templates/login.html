@@ -2,15 +2,12 @@
 {% block title %} Login | Sticky Notes {% endblock %}
     {% block content %}
         <div class="row">
-            {% if user.is_authenticated %}
-                <meta http-equiv = "refresh" content = "3; url = {% url 'index' %}" />
-            {% endif %}
             {% load crispy_forms_tags %}
             <div class="col"></div>
             <form action="" method="post" class="mt-5 mx-4 col-md-4 col-sm-12">
                 {% csrf_token %}
                 {{form|crispy}}
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-center">
                     <button type="submit" class="btn btn-primary">Login</button>
                     <a href="{% url 'register' %}" class="btn text-light ml-5" style="background-color: rgb(15, 84, 105);">Register Here</a>
                 </div>
