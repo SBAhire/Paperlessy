@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous" />
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body style="background-color: #f4f4f4;">
+    <nav class="navbar bg-dark justify-content-between align-items-center px-5 navbar-expand-lg"> 
+        <a href="{% url 'index'%}" class="navbar-brand text-light " >Sticky Notes</a>
+        <div class=" d-flex align-items-center ">
+            <a href="/user/register" class="btn  btn-outline-danger ">Register</a>
+
+            <a href="/user/login" class="btn  btn-outline-danger mx-5">Login</a>
+
+       </div>
+    </nav>
+    {% if messages %}
+                {% for message in messages%}
+                    <div class="alert alert-info alert-dismissible fade show m-3" role="alert">
+                        {{message}}
+                        <button class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% block content %}
+        {% endblock %}
+    
+</body>
+</html>

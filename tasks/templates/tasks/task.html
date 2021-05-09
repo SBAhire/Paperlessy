@@ -1,0 +1,30 @@
+{% extends './base.html' %}
+{% block content %}
+    <div class="container" style="padding: 30px;">
+        <div class="jumbotron" style="background-color: rgb(43, 220, 226);">
+            <p class="h3">{{title}}</p>
+            <div class="container p-4">
+                <div class="mt-1">
+                    <strong>Category : </strong>
+                
+                    <a href="{% url 'categorical_list' category_id %}" style=" color:black">{{task.category}}</a>
+                </div>
+                <div class="mt-1">
+                    <strong>Created on : </strong> {{task.created_on}} 
+                </div>
+                <div class="mt-1">
+                    <strong>Complete Status : </strong>
+                    {% if task.is_completed %}
+                        Complete
+                    {% else %}
+                        Not Complete
+                    {% endif %}
+                </div> 
+                <div class="d-flex">
+                    <a href="{% url 'mark_task_as_complete' category_id task.id %}" class="btn btn-success mt-3" >{% if task.is_completed %}Not Complete{% else %}Complete{% endif %}</a>
+                    <a href="{% url 'delete_task' category_id task.id %}" class=" btn btn-danger mt-3 mx-3">Delete</a>
+                </div> 
+            </div>
+        </div>
+    </div>
+{% endblock %}
