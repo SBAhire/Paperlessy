@@ -1,0 +1,14 @@
+asgiref==3.3.4
+boto==2.49.0
+Cactus==3.3.3
+colorama==0.4.4
+colorlog==5.0.1
+Django==3.2.2
+django-crispy-forms==1.11.2
+django-markwhat==1.6.2
+keyring==5.7.1
+markdown2==2.4.0
+pytz==2021.1
+six==1.16.0
+sqlparse==0.4.1
+tornado==6.1
