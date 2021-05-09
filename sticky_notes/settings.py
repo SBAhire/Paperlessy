@@ -139,4 +139,4 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = False
 
 SECURE_HSTS_PRELOAD = False
 
-django_heroku.setting.settings(locals())
+django_heroku.settings(locals())
