@@ -5,6 +5,7 @@ colorama==0.4.4
 colorlog==5.0.1
 Django==3.2.2
 django-crispy-forms==1.11.2
+django-environ==0.4.5
 django-markwhat==1.6.2
 keyring==5.7.1
 markdown2==2.4.0
