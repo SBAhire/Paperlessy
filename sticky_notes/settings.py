@@ -17,7 +17,7 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = env('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(env('DJANGO_DEBUG'))
+DEBUG = False
 
 ALLOWED_HOSTS = [env('DJANGO_ALLOWED_HOSTS')]
 
@@ -127,18 +127,5 @@ LOGIN_REDIRECT_URL = 'index'
 
 LOGIN_URL = 'login'
 
-SECURE_SSL_REDIRECT = True
-
-SESSION_COOKIE_SECURE = True
-
-CSRF_COOKIE_SECURE = True
-
-SESSION_EXPIRE_AT_BROWSER_CLOSE=True
-
-SECURE_HSTS_SECONDS = 3600
-
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-
-SECURE_HSTS_PRELOAD = True
 
 django_heroku.settings(locals())
