@@ -3,8 +3,8 @@
     {% block content %}
         <div class="row">
             {% load crispy_forms_tags %}
-            <div class="col"></div>
-            <form action="" method="post" class="mt-5 mx-4 col-md-4 col-sm-12">
+
+            <form action="" method="post" class="mt-5 mx-4 col-md-4 offset-md-4 col-sm-12">
                 {% csrf_token %}
                 {{form|crispy}}
                 <div class="d-flex justify-content-center">
@@ -13,7 +13,7 @@
                 </div>
     
             </form>
-            <div class="col"></div>
+
             
         </div>
     {% endblock %}
