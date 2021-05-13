@@ -3,6 +3,7 @@ from django.http import request
 from .models import *
 from .forms import *
 from django.contrib.auth.decorators import login_required
+from random import choice
 
 @login_required
 def index(request):
@@ -31,21 +32,29 @@ def categorical_list(request,category_id):
         if task_form.is_valid():
             task_form.save()
             redirect('/'+str(category_id))
-    
-    current_category = TaskCategory.objects.get(id=category_id)
+    try:
+        current_category = TaskCategory.objects.get(id=category_id)
+    except Exception:
+        return redirect('/')
     task_form=TaskForm()
+    colors=["#eedd82","#cfead9","#f7d98a","#fffd80","#ffc7fe","#c7f1ff","#a5ff61"]
+    
     content = {
         
         'title' : current_category.category_name,
-        'tasks' : Task.objects.filter(category=current_category).order_by('is_completed'),
+        'tasks' : Task.objects.filter(category=current_category).order_by('is_completed','-created_on'),
         'category_id' : category_id,
         'task_form' : task_form,
+        'bg_color' : colors,
     }
     return render(request,'tasks/categorical_list.html',content)
 
 @login_required
 def task(request,category_id,task_id):
-    task=Task.objects.get(id=task_id)
+    try:
+        task=Task.objects.get(id=task_id)
+    except Exception:
+        return redirect('/'+str(category_id))
     task_form=TaskForm(instance=task)
 
     if request.method=='POST':
@@ -81,5 +90,6 @@ def mark_task_as_complete(request,category_id,task_id):
     else:
         current_task.is_completed = True
     current_task.save()
-    return redirect('/'+str(category_id)+'/'+str(task_id))
+    return redirect('/'+str(category_id))
+
 

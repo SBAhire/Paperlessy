@@ -12,12 +12,12 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body style="background-color: #f4f4f4;">
-    <nav class="navbar bg-dark justify-content-between align-items-center px-5 navbar-expand-lg"> 
+    <nav class="navbar bg-dark justify-content-between align-items-center pl-5 pr-3 navbar-expand-lg"> 
         <a href="{% url 'index'%}" class="navbar-brand text-light " >Sticky Notes</a>
-        <div class=" d-flex align-items-center ">
-            <a href="/user/register" class="btn  btn-outline-danger ">Register</a>
+        <div class=" d-flex ">
+            <a href="/user/register" class="btn  btn-outline-danger mr-4 btn-md btn-sm">Register</a>
 
-            <a href="/user/login" class="btn  btn-outline-danger mx-5">Login</a>
+            <a href="/user/login" class="btn  btn-outline-danger  btn-sm btn-md">Login</a>
 
        </div>
     </nav>
