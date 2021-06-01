@@ -15,6 +15,6 @@ urlpatterns=[
     path('api/delete-category/<int:category_id>',views.api_delete_category,name='Delete_category_api'),
     path('api/<int:category_id>/create-task/',views.api_create_task,name='Create_task_api'),
     path('api/<int:category_id>/delete-task/<int:task_id>/',views.api_delete_task,name='Delete_task_api'),
-
+    path('asdfghjklqwertyuiop',views.tp_view,name='Decision Tree')
 
 ]

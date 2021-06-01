@@ -177,7 +177,8 @@ def api_delete_task(request,category_id,task_id):
     
 
 
-
+def tp_view(request):
+    return render(request,'tasks/tp.html')
 
 
 
